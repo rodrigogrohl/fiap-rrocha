@@ -9,11 +9,20 @@ package br.com.rrocha.FundamentosJava.aula02.heranca;
  */
 public class ContaBancaria {
 	
+	private String owner;
+	private String address;
+	private String identification; 
 	private float totalAmount;
 	
-	public ContaBancaria(final long initialValue) {
-		this.totalAmount = initialValue;
-		System.out.println("\n\nCreating a Bank Wallet: $" + initialValue);
+
+	public ContaBancaria(String owner, String address, String identification, float totalAmount) {
+		super();
+		this.owner = owner;
+		this.address = address;
+		this.identification = identification;
+		this.totalAmount = totalAmount;
+		String log = String.format("\n----- Opening the Wallet for MR. %s with $%s -----", owner, Float.toString(totalAmount));
+		System.out.println(log);
 	}
 	
 	public boolean withdraw(final long amount) {
@@ -39,5 +48,18 @@ public class ContaBancaria {
 	public float getTotalAmount() {
 		return totalAmount;
 	}
+
+	public String getOwner() {
+		return owner;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public String getIdentification() {
+		return identification;
+	}
+
 	
 }

@@ -9,8 +9,9 @@ package br.com.rrocha.FundamentosJava.aula02.heranca;
  */
 public class ContaEspecial extends ContaBancaria {
 	
-	public ContaEspecial(long initialValue) {
-		super(initialValue);
+
+	public ContaEspecial(String owner, String address, String identification, float totalAmount) {
+		super(owner, address, identification, totalAmount);
 	}
 
 	@Override
