@@ -3,11 +3,13 @@
  */
 package br.com.rrocha.FundamentosJava.aula02.heranca;
 
+import br.com.rrocha.FundamentosJava.aula02.interfaces.Taxes;
+
 /**
  * @author rm48236
  *
  */
-public class ContaBancaria {
+public class ContaBancaria implements Taxes {
 	
 	private String owner;
 	private String address;
@@ -59,6 +61,11 @@ public class ContaBancaria {
 
 	public String getIdentification() {
 		return identification;
+	}
+
+	public double calculateTaxes() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	
