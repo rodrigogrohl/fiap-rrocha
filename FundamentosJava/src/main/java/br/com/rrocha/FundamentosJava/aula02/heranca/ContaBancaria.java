@@ -67,6 +67,15 @@ public class ContaBancaria implements Taxes {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj.getClass().isInstance(this)){
+			ContaBancaria c = (ContaBancaria) obj;
+			if(c.getIdentification() == this.identification)
+				return true;
+		}
+		return false;
+	}
 	
 }
