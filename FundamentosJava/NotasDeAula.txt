@@ -1,8 +1,14 @@
-Novidades Java7
+Java 7+
 	Catch multiplo de Exceptions;
 	Interface AutoClosable e Gerenciamento Automático de Recursos(Streams, Connections, Pools);
 	
+Java 8+
+	LocalDate: incorporação do JodaTime a API;
+
 Acessar:
 	https://www.hackerrank.com/
 	https://codenvy.com/
+	
+Ler:
+	Design Patter Builder (Metodos Fluentes/DDD)
 	

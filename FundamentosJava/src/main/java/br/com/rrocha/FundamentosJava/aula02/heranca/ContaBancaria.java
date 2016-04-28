@@ -3,6 +3,8 @@
  */
 package br.com.rrocha.FundamentosJava.aula02.heranca;
 
+import java.time.LocalDate;
+
 import br.com.rrocha.FundamentosJava.aula02.interfaces.Taxes;
 
 /**
@@ -15,10 +17,12 @@ public class ContaBancaria implements Taxes {
 	private String address;
 	private String identification; 
 	private long totalAmount;
+	private LocalDate openDate;
 	
 
-	public ContaBancaria(String owner, String address, String identification, long totalAmount) {
+	public ContaBancaria(String owner, String address, String identification, long totalAmount, LocalDate openDate) {
 		super();
+		this.openDate = openDate;
 		this.owner = owner;
 		this.address = address;
 		this.identification = identification;
@@ -69,6 +73,10 @@ public class ContaBancaria implements Taxes {
 		return 0;
 	}
 	
+	public LocalDate getOpenDate() {
+		return openDate;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if(obj.getClass().isInstance(this)){
