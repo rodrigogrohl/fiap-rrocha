@@ -14,10 +14,10 @@ public class ContaBancaria implements Taxes {
 	private String owner;
 	private String address;
 	private String identification; 
-	private float totalAmount;
+	private long totalAmount;
 	
 
-	public ContaBancaria(String owner, String address, String identification, float totalAmount) {
+	public ContaBancaria(String owner, String address, String identification, long totalAmount) {
 		super();
 		this.owner = owner;
 		this.address = address;
@@ -27,9 +27,10 @@ public class ContaBancaria implements Taxes {
 		System.out.println(log);
 	}
 	
-	public boolean withdraw(final long amount) {
+	public boolean withdraw(final long amount) throws NoFundException {
 		if(amount > totalAmount) {
-			return false;
+			String message = String.format("Tentativa de retirada de %d: Saldo insuficiente ($ %d)", amount, totalAmount);
+			throw new NoFundException(message);
 		} else {
 			this.totalAmount -= amount;
 			System.out.println("(-) Getting in your wallet: $" + amount + ".\nNow you have: $" + totalAmount);
@@ -47,7 +48,7 @@ public class ContaBancaria implements Taxes {
 		return true;
 	}
 
-	public float getTotalAmount() {
+	public long getTotalAmount() {
 		return totalAmount;
 	}
 
