@@ -1,4 +1,7 @@
-
+Novidades Java7
+	Catch multiplo de Exceptions;
+	Interface AutoClosable e Gerenciamento Automático de Recursos(Streams, Connections, Pools);
+	
 Acessar:
 	https://www.hackerrank.com/
 	https://codenvy.com/
