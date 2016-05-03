@@ -5,7 +5,6 @@ package br.com.rrocha.FundamentosJava.aula04;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,15 +16,22 @@ import java.util.Random;
  */
 public class Exercicio1 {
 
+	private static final int SIZE_LIST = 15_000_000;
+	private static final int GET_ITEM_AT = 13_750_000;
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		List<Integer> arrayList = new ArrayList<Integer>();
 		List<Integer> linkedList = new LinkedList<Integer>();
-		populateWithSameContent(arrayList, linkedList);
-		getItemAtPosition(750000, arrayList);
-		getItemAtPosition(750000, linkedList);		
+		System.out.println("METRICAS DE ARRAY LIST");
+		populate(arrayList);
+		getItemAtPosition(GET_ITEM_AT, arrayList);
+		
+		System.out.println("\nMETRICAS DE LINKED LIST");
+		populate(linkedList);
+		getItemAtPosition(GET_ITEM_AT, linkedList);		
 		
 	}
 
@@ -34,19 +40,19 @@ public class Exercicio1 {
 		Integer integer = list.get(i);
 		LocalDateTime end = LocalDateTime.now();
 		long between = ChronoUnit.MILLIS.between(start, end);
-		System.out.println(start + " x " + end);
-		System.out.printf("Get item %d in %d milliseconds.\n", integer, between);
+		System.out.printf("\nGet item %d in %d milliseconds.\n", integer, between);
 	}
 
-	private static void populateWithSameContent(List<Integer> arrayList,
-			List<Integer> linkedList) {
-		for (int i = 0; i < 1000000; i++) {
+	private static void populate(List<Integer> list) {
+		LocalDateTime start = LocalDateTime.now();
+		for (int i = 0; i < SIZE_LIST; i++) {
 			Random random = new Random();
 			int nextInt = random.nextInt(9999);
-			arrayList.add(nextInt);
-			linkedList.add(nextInt);
+			list.add(nextInt);
 		}
-		System.out.printf("List #1 size: %d \nList #2 size: %d\n", arrayList.size(), linkedList.size() );
+		LocalDateTime end = LocalDateTime.now();
+		long between = ChronoUnit.MILLIS.between(start, end);
+		System.out.printf("List Populated in %d milliseconds", between );
 	}
 
 }
