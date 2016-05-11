@@ -3,6 +3,8 @@
  */
 package br.com.rrocha.FundamentosJava.aula02.heranca;
 
+import java.time.LocalDate;
+
 import br.com.rrocha.FundamentosJava.aula02.interfaces.Taxes;
 
 /**
@@ -14,11 +16,13 @@ public class ContaBancaria implements Taxes {
 	private String owner;
 	private String address;
 	private String identification; 
-	private float totalAmount;
+	private long totalAmount;
+	private LocalDate openDate;
 	
 
-	public ContaBancaria(String owner, String address, String identification, float totalAmount) {
+	public ContaBancaria(String owner, String address, String identification, long totalAmount, LocalDate openDate) {
 		super();
+		this.openDate = openDate;
 		this.owner = owner;
 		this.address = address;
 		this.identification = identification;
@@ -27,9 +31,10 @@ public class ContaBancaria implements Taxes {
 		System.out.println(log);
 	}
 	
-	public boolean withdraw(final long amount) {
+	public boolean withdraw(final long amount) throws NoFundException {
 		if(amount > totalAmount) {
-			return false;
+			String message = String.format("Tentativa de retirada de %d: Saldo insuficiente ($ %d)", amount, totalAmount);
+			throw new NoFundException(message);
 		} else {
 			this.totalAmount -= amount;
 			System.out.println("(-) Getting in your wallet: $" + amount + ".\nNow you have: $" + totalAmount);
@@ -47,7 +52,7 @@ public class ContaBancaria implements Taxes {
 		return true;
 	}
 
-	public float getTotalAmount() {
+	public long getTotalAmount() {
 		return totalAmount;
 	}
 
@@ -67,6 +72,19 @@ public class ContaBancaria implements Taxes {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	public LocalDate getOpenDate() {
+		return openDate;
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if(obj.getClass().isInstance(this)){
+			ContaBancaria c = (ContaBancaria) obj;
+			if(c.getIdentification() == this.identification)
+				return true;
+		}
+		return false;
+	}
 	
 }
