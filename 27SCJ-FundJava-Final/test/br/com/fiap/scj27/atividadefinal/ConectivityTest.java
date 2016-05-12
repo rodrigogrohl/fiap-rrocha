@@ -11,6 +11,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+
 /**
  * @author Rodrigo
  *
@@ -47,6 +51,14 @@ public class ConectivityTest {
 
 	@Test
 	public void test() {
+		Twitter twitter = TwitterFactory.getSingleton();
+		try {
+			String screenName = twitter.getScreenName();
+			assertNotNull(screenName);			
+		} catch (IllegalStateException | TwitterException e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
 		fail("Not yet implemented");
 	}
 
