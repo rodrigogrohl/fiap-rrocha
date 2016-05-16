@@ -22,16 +22,27 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "IDUSUARIO")
 	private int id;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "IDFORUM")
 	private Forum forum;
-	
+
 	@Column(name = "NOME")
 	private String nome;
-	
+
 	@Column(name = "EMAIL")
 	private String email;
+
+	public Usuario() {
+	}
+
+	public Usuario(int id, Forum forum, String nome, String email) {
+		super();
+		this.id = id;
+		this.forum = forum;
+		this.nome = nome;
+		this.email = email;
+	}
 
 	public int getId() {
 		return id;

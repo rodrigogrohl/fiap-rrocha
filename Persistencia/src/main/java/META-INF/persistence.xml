@@ -13,4 +13,17 @@
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 		</properties>
 	</persistence-unit>
+	<persistence-unit name="exercicio1PU" transaction-type="RESOURCE_LOCAL">
+		<class>br.com.rrocha.fiap.Persistencia.exercicio01.Cliente</class>
+		<class>br.com.rrocha.fiap.Persistencia.exercicio01.Pedido</class>
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cliente_pedido"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="fiap"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+		</properties>
+	</persistence-unit>
 </persistence>
