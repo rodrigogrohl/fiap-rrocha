@@ -1,4 +1,4 @@
-package br.com.fiap.rm48236.jpa.service.dao;
+package br.com.fiap.rm48236.jpa.service.jpa;
 
 import java.io.Serializable;
 

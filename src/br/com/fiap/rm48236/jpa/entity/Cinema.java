@@ -35,6 +35,13 @@ public class Cinema implements Serializable {
 	
 	public Cinema() {}
 
+	public Cinema(Integer id, String descricao, String contato) {
+		super();
+		this.id = id;
+		this.descricao = descricao;
+		this.contato = contato;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -61,7 +68,7 @@ public class Cinema implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Cinema [id=" + id + ", descricao=" + descricao + ", contato=" + contato + "]";
+		return String.format("%d - %s <%s>", id, descricao, contato);
 	}
 	
 }
