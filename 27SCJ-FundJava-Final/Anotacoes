@@ -8,8 +8,15 @@ Setar count 100 (máximo)
 
 Iterating in a result set: parameters such count, until, since_id, max_id allow to control how we iterate through search results, since it could be a large set of tweets. The Working with Timelines documentation is a very rich and illustrative tutorial to learn how to use these parameters to achieve the best efficiency and reliability when processing result sets.
 
+
 TRATANDO PROBLEMAS COM PAGES
 https://dev.twitter.com/rest/public/timelines
+
+TOOLS
+http://www.eclipse.org/papyrus/download.html
+http://www.objectaid.com/installation
+https://www.ibm.com/developerworks/opensource/tutorials/os-ecl-rcpapp/
+http://www.vogella.com/tutorials/EclipseRCP/article.html
 
 CERTIFICADO
 keytool -importcert -alias twitter -file twitter-certificate-base64.cer -keystore clientkeystore
