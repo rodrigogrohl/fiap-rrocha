@@ -59,7 +59,6 @@ public class ConectivityTest {
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
-		fail("Not yet implemented");
 	}
 
 }
