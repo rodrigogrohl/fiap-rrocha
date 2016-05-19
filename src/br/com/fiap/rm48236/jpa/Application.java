@@ -19,15 +19,15 @@ public class Application {
 	
 	public static void main(String[] args) {
 
-		adicionaCinema();
-		adicionaLocal();
+		//adicionaCinema();
+		//adicionaLocal();
 		adicionaFilme();
 	}
 
 
 	private static void adicionaFilme() {
 		List<Local> locais = localDAO.listar();
-		Local local = (Local) JOptionPane.showInputDialog(null, "Inserir Filme Em", "Selecionar Local", 0, null, locais.toArray(), null);
+		Local local = (Local) JOptionPane.showInputDialog(null, "Inserir Filme Em", "Selecionar Local", 1, null, locais.toArray(), null);
 		
 		String nome = JOptionPane.showInputDialog("Qual o nome do Filme?");
 		String duracao = JOptionPane.showInputDialog("Qual a duração do Filme?");
@@ -35,6 +35,7 @@ public class Application {
 		
 		Filme filme = new Filme(null, local, nome, Double.parseDouble(duracao), Integer.parseInt(stringNumeroSala));
 		filmeDAO.adicionar(filme);
+		
 	}
 
 

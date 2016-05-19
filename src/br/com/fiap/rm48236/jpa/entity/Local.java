@@ -80,6 +80,11 @@ public class Local implements Serializable {
 	public void setQtdeSalas(Integer qtdeSalas) {
 		this.qtdeSalas = qtdeSalas;
 	}
+
+	@Override
+	public String toString() {
+		return cinema.getDescricao() + " - " + local;
+	}
 	
 	
 
