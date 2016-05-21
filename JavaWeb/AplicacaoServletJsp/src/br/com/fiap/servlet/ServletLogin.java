@@ -1,12 +1,17 @@
 package br.com.fiap.servlet;
 
 import java.io.IOException;
+
+import javax.persistence.NoResultException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import br.com.fiap.dao.UsuarioDAO;
+import br.com.fiap.entity.Usuario;
 
 /**
  * Servlet implementation class ServletLogin
@@ -26,24 +31,25 @@ public class ServletLogin extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		String nome = request.getParameter("nome");
-		String senha = request.getParameter("senha");
-		
-		String user = getServletConfig().getInitParameter("user");
-		String pwd = getServletConfig().getInitParameter("pwd");
-		
-		if(nome.equals(user) && senha.equals(pwd)) {
-			response.sendRedirect("admin/menu.jsp");
-		} else {
-			// response.sendRedirect("login.jsp");
-			request.setAttribute("msgValidacao", "Usuário ou senha Inválidos.");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
-		}
+		request.getRequestDispatcher("login.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		String nome = request.getParameter("nome");
+		String senha = request.getParameter("senha");
+		
+		//String user = getServletConfig().getInitParameter("user");
+		//String pwd = getServletConfig().getInitParameter("pwd");
+		UsuarioDAO dao = new UsuarioDAO();
+		try {
+			Usuario usuario = dao.login(nome, senha);
+			request.setAttribute("loggedUser", usuario);
+			request.getRequestDispatcher("admin/menu.jsp").forward(request, response);
+		} catch (NoResultException nre) {
+			request.setAttribute("msgValidacao", "Usuário ou senha Inválidos.");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
 	}
 
 }

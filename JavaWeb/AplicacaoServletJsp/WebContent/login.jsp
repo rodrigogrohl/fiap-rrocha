@@ -7,13 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="valida" method="get">
-		<input type="text" name="usuario">
-		<input type="text" name="senha">
-		<input type="submit">
+	<form action="valida" method="post">
+		<label for="usuario">Usuário </label><input type="text" name="usuario"><p>
+		<label for="senha">Senha</label><input type="text" name="senha"><p>
+		<input type="submit" value="Enviar">
 	</form>
 	<% 
 	String message = (String) request.getAttribute("msgValidacao");
+	if(message != null)
+		out.append(message);
 	%>
 </body>
 </html>
