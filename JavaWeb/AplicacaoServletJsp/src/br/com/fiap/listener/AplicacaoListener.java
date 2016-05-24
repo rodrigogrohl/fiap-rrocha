@@ -1,5 +1,9 @@
 package br.com.fiap.listener;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.ServletRequestEvent;
@@ -55,8 +59,10 @@ public class AplicacaoListener implements ServletContextListener, HttpSessionLis
 	/**
      * @see ServletContextListener#contextDestroyed(ServletContextEvent)
      */
-    public void contextDestroyed(ServletContextEvent arg0)  { 
-         // TODO Auto-generated method stub
+    public void contextDestroyed(ServletContextEvent event)  { 
+    	gerarLog("Context finalizado: " + event.getServletContext().getContextPath() + " - " +
+    			event.getServletContext().getServerInfo() + " - " + 
+    			event.getServletContext().getVirtualServerName());
     }
 
 	/**
@@ -80,11 +86,20 @@ public class AplicacaoListener implements ServletContextListener, HttpSessionLis
          // TODO Auto-generated method stub
     }
 
-	/**
-     * @see ServletContextListener#contextInitialized(ServletContextEvent)
-     */
     public void contextInitialized(ServletContextEvent arg0)  { 
-         // TODO Auto-generated method stub
+    	gerarLog("Context inicializado: " + arg0.getServletContext().getContextPath() + " - " +
+    				arg0.getServletContext().getServerInfo() + " - " + 
+    				arg0.getServletContext().getVirtualServerName());
+    }
+    
+    private void gerarLog(final String log) {
+    	try {
+    		FileWriter fw = new FileWriter("D:\\rm48236\\log.txt", true);
+			fw.write("\n" + new Date().toString() + " - " + log);
+			fw.flush();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     }
 	
 }
