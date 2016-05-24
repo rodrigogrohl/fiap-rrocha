@@ -93,4 +93,9 @@ public class Material implements Serializable {
 		this.fabricante = fabricante;
 	}
 
+	@Override
+	public String toString() {
+		return "id=" + id + ", descricao=" + descricao + ", preco=" + preco + ", fabricante=" + fabricante;
+	}
+
 }

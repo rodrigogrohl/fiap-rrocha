@@ -11,11 +11,12 @@ public class GenericDAO<T> implements DAO<T> {
 
 	public GenericDAO(Class<T> classe) {
 		this.classe = classe;
+		em = JPAUtil.getEntityManager();
+
 	}
 
 	@Override
 	public void adicionar(T entidade) {
-		em = JPAUtil.getEntityManager();
 		em.getTransaction().begin();
 		em.persist(entidade);
 		em.getTransaction().commit();
@@ -24,13 +25,11 @@ public class GenericDAO<T> implements DAO<T> {
 
 	@Override
 	public List<T> listar() {
-		em = JPAUtil.getEntityManager();
 		return em.createQuery("From " + classe.getSimpleName(), classe).getResultList();
 	}
 
 	@Override
 	public void atualizar(T entidade) {
-		em = JPAUtil.getEntityManager();
 		em.getTransaction().begin();
 		em.merge(entidade);
 		em.getTransaction().commit();
@@ -39,7 +38,6 @@ public class GenericDAO<T> implements DAO<T> {
 
 	@Override
 	public void remover(T entidade) {
-		em = JPAUtil.getEntityManager();
 		em.getTransaction().begin();
 		em.remove(em.merge(entidade));
 		em.getTransaction().commit();
@@ -48,11 +46,15 @@ public class GenericDAO<T> implements DAO<T> {
 
 	@Override
 	public T buscar(int id) {
-		em = JPAUtil.getEntityManager();
 		em.getTransaction().begin();
 		T entidade = em.find(classe, id);
 		em.getTransaction().commit();
 		em.close();
 		return entidade;
 	}
+
+	public EntityManager getEm() {
+		return em;
+	}
+	
 }

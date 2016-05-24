@@ -80,6 +80,11 @@ public class Procedimento implements Serializable {
 		this.preco = preco;
 		this.paciente = paciente;
 	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", descricao=" + descricao + ", preco=" + preco;
+	}
 	
 	
 	

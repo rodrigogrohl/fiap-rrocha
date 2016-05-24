@@ -29,7 +29,7 @@ public class Paciente implements Serializable {
 	@OneToMany(mappedBy="paciente")
 	private List<Material> materiais;
 	
-	@ManyToMany
+	@ManyToMany(mappedBy="pacientes")
 	private List<Agenda> agendas;
 	
 	@Column(name="NOME")

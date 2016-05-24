@@ -4,6 +4,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Order;
+import javax.persistence.criteria.Root;
+import javax.persistence.criteria.Selection;
 import javax.swing.JOptionPane;
 
 import br.com.fiap.rm48236.jpa.exercicio3.entity.Agenda;
@@ -29,13 +36,47 @@ public class Aplicacao {
 			//adicionaPaciente();
 			//adicionaAgenda();
 			//associaAgendaPaciente();
-			adicionaMaterial();
-			adicionaProcedimento();
+			//adicionaMaterial();
+			//adicionaProcedimento();
+			
+			listaEstruturaOrderByCriteria();
 			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Erro: " + e.getLocalizedMessage());
 		}
 				
+	}
+
+	private static void listaEstruturaOrderByCriteria() {
+		EntityManager em = pacienteDAO.getEm();
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+		CriteriaQuery<Paciente> query = cb.createQuery(Paciente.class);
+		Root<Paciente> from = query.from(Paciente.class);
+		
+		Order order = cb.asc(from.get("nome"));
+		query.orderBy(order);
+		
+		TypedQuery<Paciente> typedQuery = em.createQuery(query);
+		List<Paciente> pacientes = typedQuery.getResultList();
+		for (Paciente paciente : pacientes) {
+			System.out.println("Relatorio Para: " + paciente);
+			exibeRelatorio(paciente);
+			System.out.println("Fim do Relatorio\n\n");
+		}
+		
+	}
+
+	private static void exibeRelatorio(Paciente paciente) {
+		List<Agenda> agendas = paciente.getAgendas();
+		System.out.println("\tAGENDAS:");
+		for (Agenda agenda : agendas) {
+			System.out.println("\t\t" + agenda);
+		}
+		List<Procedimento> procedimentos = paciente.getProcedimentos();
+		System.out.println("\tPROCEDIMENTOS:");
+		for (Procedimento procedimento : procedimentos) {
+			System.out.println("\t\t" + procedimento);
+		}
 	}
 
 	private static void adicionaProcedimento() {
@@ -44,7 +85,11 @@ public class Aplicacao {
 
 		String descricao = JOptionPane.showInputDialog("Descricao");
 		String stringPreco = JOptionPane.showInputDialog("Preco 999.99");
-		new Procedimento(null, descricao, Double.valueOf(stringPreco), paciente);
+		Procedimento procedimento = new Procedimento(null, descricao, Double.valueOf(stringPreco), paciente);
+		
+		procedimentoDAO.adicionar(procedimento);
+		
+		JOptionPane.showMessageDialog(null, "Procedimento Cadastrado com Sucesso!");
 	}
 
 	private static void adicionaMaterial() {
