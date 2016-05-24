@@ -4,6 +4,7 @@ import java.util.List;
 
 import twitter4j.Query;
 import twitter4j.QueryResult;
+import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -36,6 +37,11 @@ public class Teste {
 			for (Status status : tweets) {
 				String tweetLog = String.format("ID: %d from %s at %s posted: %s", status.getId(), status.getUser().getName(), status.getCreatedAt(), status.getText());
 				System.out.println(tweetLog);
+			}
+			
+			ResponseList<Status> favorites = twitter.getFavorites("#java");
+			for (Status status : favorites) {
+				System.out.println("FAVORITES:" + status);
 			}
 			
 			System.out.println("YOUR ID: " + id + " " + screenName);
