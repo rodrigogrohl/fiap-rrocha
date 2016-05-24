@@ -3,6 +3,8 @@
  */
 package br.com.fiap.rm48236.jpa.exercicio3.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +20,9 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="procedimento")
-public class Procedimento {
+public class Procedimento implements Serializable {
+
+	private static final long serialVersionUID = -4946247310864502712L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,6 +70,17 @@ public class Procedimento {
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
+	
+	public Procedimento() {}
+
+	public Procedimento(Integer id, String descricao, Double preco, Paciente paciente) {
+		super();
+		this.id = id;
+		this.descricao = descricao;
+		this.preco = preco;
+		this.paciente = paciente;
+	}
+	
 	
 	
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -28,6 +29,9 @@ public class Paciente implements Serializable {
 	@OneToMany(mappedBy="paciente")
 	private List<Material> materiais;
 	
+	@ManyToMany
+	private List<Agenda> agendas;
+	
 	@Column(name="NOME")
 	private String nome;
 	
@@ -37,6 +41,19 @@ public class Paciente implements Serializable {
 	
 	@Column(name="TELEFONE", length = 20)
 	private String telefone;
+	
+	public Paciente() {}
+
+	public Paciente(String cPF, List<Procedimento> procedimentos, List<Material> materiais, String nome, Date nasc,
+			String telefone) {
+		super();
+		CPF = cPF;
+		this.procedimentos = procedimentos;
+		this.materiais = materiais;
+		this.nome = nome;
+		this.nasc = nasc;
+		this.telefone = telefone;
+	}
 
 	public String getCPF() {
 		return CPF;
@@ -68,6 +85,36 @@ public class Paciente implements Serializable {
 
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+
+	public List<Procedimento> getProcedimentos() {
+		return procedimentos;
+	}
+
+	public void setProcedimentos(List<Procedimento> procedimentos) {
+		this.procedimentos = procedimentos;
+	}
+
+	public List<Material> getMateriais() {
+		return materiais;
+	}
+
+	public void setMateriais(List<Material> materiais) {
+		this.materiais = materiais;
+	}
+	
+
+	public List<Agenda> getAgendas() {
+		return agendas;
+	}
+
+	public void setAgendas(List<Agenda> agendas) {
+		this.agendas = agendas;
+	}
+
+	@Override
+	public String toString() {
+		return "CPF=" + CPF + ", nome=" + nome + ", nasc=" + nasc + ", telefone=" + telefone;
 	}
 	
 }

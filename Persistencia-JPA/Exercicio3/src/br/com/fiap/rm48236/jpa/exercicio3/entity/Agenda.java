@@ -1,6 +1,7 @@
 package br.com.fiap.rm48236.jpa.exercicio3.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -16,6 +17,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "AGENDA")
@@ -32,7 +34,9 @@ public class Agenda implements Serializable {
 	@JoinTable(name = "AGENDA_PACIENTE", 
 		catalog="HOSPITAL",
 		joinColumns = {@JoinColumn(name="AGENDA_ID", nullable=false, updatable=false)},
-		inverseJoinColumns = {@JoinColumn(name="PACIENTE_CPF", nullable=false, updatable=false)})
+		inverseJoinColumns = {@JoinColumn(name="PACIENTE_CPF", nullable=false, updatable=false)},
+		uniqueConstraints= @UniqueConstraint(columnNames={"AGENDA_ID","PACIENTE_CPF"},name="CONSTRAINT_AGENDA_PACIENTE")
+	)
 	private List<Paciente> pacientes;
 
 	@Column(name = "DATA")
@@ -79,6 +83,8 @@ public class Agenda implements Serializable {
 	}
 
 	public List<Paciente> getPacientes() {
+		if(pacientes == null)
+			pacientes = new ArrayList<>();
 		return pacientes;
 	}
 
@@ -86,5 +92,19 @@ public class Agenda implements Serializable {
 		this.pacientes = pacientes;
 	}
 	
+	public Agenda() {}
 
+	public Agenda(Integer id, Date data, Date hora, String descricao) {
+		super();
+		this.id = id;
+		this.data = data;
+		this.hora = hora;
+		this.descricao = descricao;
+	}
+
+	@Override
+	public String toString() {
+		return "id=" + id + ", data=" + data + ", hora=" + hora + ", descricao=" + descricao ;
+	}
+	
 }

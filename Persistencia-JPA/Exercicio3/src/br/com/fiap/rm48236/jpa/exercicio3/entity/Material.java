@@ -42,6 +42,17 @@ public class Material implements Serializable {
 	@Column(name = "FABRICANTE")
 	private String fabricante;
 
+	public Material() {}
+	
+	public Material(Integer id, Paciente paciente, String descricao, Double preco, String fabricante) {
+		super();
+		this.id = id;
+		this.paciente = paciente;
+		this.descricao = descricao;
+		this.preco = preco;
+		this.fabricante = fabricante;
+	}
+
 	public Integer getId() {
 		return id;
 	}
