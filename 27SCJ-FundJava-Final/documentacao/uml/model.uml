@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3J3q0B3iEea-FJfrAO_1Vg" name="FundamentosJavaUML">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_3WIlMB3iEea-FJfrAO_1Vg" name="Interaction1"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_3fIJIB3iEea-FJfrAO_1Vg" name="Activity1"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_3hrG0B3iEea-FJfrAO_1Vg" name="Interaction2">
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_B2jJwB4AEea-FJfrAO_1Vg" name="finder : TweetFinder" coveredBy="_C6Ts0B4AEea-FJfrAO_1Vg _C6dd0R4AEea-FJfrAO_1Vg _C6dd0B4AEea-FJfrAO_1Vg"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_C6Ts0B4AEea-FJfrAO_1Vg" name="ActionExecSpecStart" covered="_B2jJwB4AEea-FJfrAO_1Vg" execution="_C6dd0B4AEea-FJfrAO_1Vg"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_C6dd0B4AEea-FJfrAO_1Vg" name="ActionExecSpec" covered="_B2jJwB4AEea-FJfrAO_1Vg" finish="_C6dd0R4AEea-FJfrAO_1Vg" start="_C6Ts0B4AEea-FJfrAO_1Vg"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_C6dd0R4AEea-FJfrAO_1Vg" name="ActionExecSpecFinish" covered="_B2jJwB4AEea-FJfrAO_1Vg" execution="_C6dd0B4AEea-FJfrAO_1Vg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_awgzIB3jEea-FJfrAO_1Vg" name="Usuario"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_XukWAB3sEea-FJfrAO_1Vg" name="ProcessaEstatisticas"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_fIWnAB3sEea-FJfrAO_1Vg" client="_awgzIB3jEea-FJfrAO_1Vg" supplier="_XukWAB3sEea-FJfrAO_1Vg"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_T0qVIB4AEea-FJfrAO_1Vg" name="br.com.fiap.scj27.rm48236.services">
+    <packagedElement xmi:type="uml:Class" xmi:id="_ba7RAB4CEea-FJfrAO_1Vg" name="TweetSearch">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kFiQsB4CEea-FJfrAO_1Vg" name="byHashtag"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,5 @@
+/.apt_generated/
+/build/
+/.project
+/.classpath
+/.factorypath
