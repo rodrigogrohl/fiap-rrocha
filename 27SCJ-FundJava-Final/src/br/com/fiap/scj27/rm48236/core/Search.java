@@ -22,6 +22,8 @@ public class Search {
 	 * Busca todos os tweets disponíveis na API, paginando regressivamente 
 	 * via minId e maxId.
 	 * 
+	 * Utilizado TreeMap pelo seu algoritmo de Armazenamento e Ordenação
+	 * 
 	 * @param query
 	 * @return
 	 * @throws TwitterException 
@@ -41,7 +43,7 @@ public class Search {
 			}
 			query.setMaxId(allResults.firstKey() - 1);
 
-			System.out.println( String.format("Putting %d Tweets in Map", tweets.size()) );
+			//System.out.println( String.format("Putting %d Tweets in Map", tweets.size()) );
 		} while (result.getTweets().size() > 0);
 		
 		System.out.println( String.format("Found %d Tweets!", allResults.size()) );
