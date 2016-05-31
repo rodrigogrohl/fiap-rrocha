@@ -10,6 +10,12 @@ import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 
+/**
+ * Classe responsavel pelas chamadas de busca na API.
+ * 
+ * @author Rodrigo
+ *
+ */
 public class Search {
 
 	private Twitter twitter;

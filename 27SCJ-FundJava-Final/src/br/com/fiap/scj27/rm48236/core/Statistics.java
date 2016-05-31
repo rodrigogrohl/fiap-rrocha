@@ -12,31 +12,31 @@ import java.util.TreeMap;
 import twitter4j.Status;
 
 /**
- * Classe responsavel por agrupar e calcular as estatisticas
- * de uma lista de Tweets (Status)
- *   
+ * Classe responsavel por agrupar e calcular as estatisticas de uma lista de
+ * Tweets (Status)
+ * 
  * @author Rodrigo
  *
  */
-public class Calculate {
-	
+public class Statistics {
+
 	private SortedMap<Long, Status> tweetList;
-	
+
 	private SortedMap<LocalDate, List<Status>> groupedTweetsPerDay = new TreeMap<>();
-	
+
 	private SortedMap<LocalDate, Integer> tweetsPerDay = new TreeMap<>();
-	
+
 	private SortedMap<LocalDate, Integer> retweetsPerDay = new TreeMap<>();
-	
+
 	private SortedMap<LocalDate, Integer> favoritesPerDay = new TreeMap<>();
-	
-	public Calculate(final SortedMap<Long, Status> tweetList) {
+
+	public Statistics(final SortedMap<Long, Status> tweetList) {
 		this.tweetList = tweetList;
 		groupTweetsPerDay();
-		sumarize();
+		sumarizeTweets();
 	}
-	
-	private void sumarize() {
+
+	private void sumarizeTweets() {
 		Set<LocalDate> dates = groupedTweetsPerDay.keySet();
 		for (LocalDate tweetDate : dates) {
 			List<Status> tweets = groupedTweetsPerDay.get(tweetDate);
@@ -46,12 +46,13 @@ public class Calculate {
 				retweets += status.getRetweetCount();
 				favorites += status.getFavoriteCount();
 			}
-			
+
 			tweetsPerDay.put(tweetDate, tweets.size());
 			retweetsPerDay.put(tweetDate, retweets);
 			favoritesPerDay.put(tweetDate, favorites);
-			
-			System.out.printf("Dia %d: %d tweets. %d RT's. %d Favorites.\n", tweetDate.getDayOfMonth(), tweets.size(), retweets, favorites);
+
+			System.out.printf("Dia %d: %d tweets. %d RT's. %d Favorites.\n", tweetDate.getDayOfMonth(), tweets.size(),
+					retweets, favorites);
 		}
 	}
 
@@ -60,17 +61,33 @@ public class Calculate {
 		while (iterator.hasNext()) {
 			Status status = (Status) iterator.next();
 			Date date = status.getCreatedAt();
-			
+
 			@SuppressWarnings("deprecation")
 			LocalDate tweetDate = LocalDate.of(date.getYear(), date.getMonth(), date.getDate());
-			
-			if(!groupedTweetsPerDay.containsKey(tweetDate)) {
+
+			if (!groupedTweetsPerDay.containsKey(tweetDate)) {
 				groupedTweetsPerDay.put(tweetDate, new ArrayList<>());
 			}
 			groupedTweetsPerDay.get(tweetDate).add(status);
 		}
-		String log = String.format("Agrupados status em %d dias distintos", groupedTweetsPerDay.size());
-		System.out.println(log);
+		//String log = String.format("Agrupados status em %d dias distintos", groupedTweetsPerDay.size());
+		//System.out.println(log);
+	}
+
+	public SortedMap<LocalDate, List<Status>> getGroupedTweetsPerDay() {
+		return groupedTweetsPerDay;
+	}
+
+	public SortedMap<LocalDate, Integer> getTweetsPerDay() {
+		return tweetsPerDay;
+	}
+
+	public SortedMap<LocalDate, Integer> getRetweetsPerDay() {
+		return retweetsPerDay;
+	}
+
+	public SortedMap<LocalDate, Integer> getFavoritesPerDay() {
+		return favoritesPerDay;
 	}
 
 }

@@ -15,7 +15,7 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
-public class OrderTest {
+public class StatisticsTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -38,9 +38,9 @@ public class OrderTest {
 	}
 
 	@Test
-	public void testOrder() throws TwitterException {
+	public void testCalculate() throws TwitterException {
 		SortedMap<Long, Status> tweets = search.byQuery("#javaone");
-		Order order = new Order(tweets);
+		Statistics calc = new Statistics(tweets);
 		
 	}
 
