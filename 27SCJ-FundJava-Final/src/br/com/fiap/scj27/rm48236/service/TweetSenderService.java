@@ -16,20 +16,25 @@ public class TweetSenderService {
 		this.twitter = twitter;
 	}
 	
-	public void updateStatusWithOverflow(final String text) throws TwitterException {
-		String[] split = text.split("\n");
+	/**
+	 * Metodo criado para quebrar textos maiores que 140 caracteres
+	 * @param text
+	 * @throws TwitterException
+	 */
+	public void updateStatusWithOverflow(final String text, final String regex, final String sufix) throws TwitterException {
+		String[] split = text.split(regex);
 		String overflow = "";
 		for (int i = 0; i < split.length; i++) {
-			if( (overflow.length() + split[i].length()) >= 140){
-				updateStatus(overflow);
+			if( (overflow.length() + split[i].length() + sufix.length()) >= 140){
+				updateStatus(overflow, sufix);
 				overflow = "";
 			}
 			overflow += split[i] + "\n";
 		}
-		updateStatus(overflow);
+		updateStatus(overflow, sufix);
 	}
 	
-	public Status updateStatus(final String text) throws TwitterException {
-		return twitter.updateStatus(text + "@michelpf");
+	public Status updateStatus(final String text, final String sufix) throws TwitterException {
+		return twitter.updateStatus(text + " " + sufix);
 	}
 }

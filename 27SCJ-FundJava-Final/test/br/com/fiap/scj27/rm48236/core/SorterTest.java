@@ -2,6 +2,7 @@ package br.com.fiap.scj27.rm48236.core;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.SortedMap;
 
 import org.junit.After;
@@ -40,8 +41,12 @@ public class SorterTest {
 	@Test
 	public void testOrder() throws TwitterException {
 		SortedMap<Long, Status> tweets = search.byQuery("#javaone");
-		Sorter order = new Sorter();
-
+		Sorter sorter = new Sorter();
+		ArrayList<Status> byAuthorName = sorter.byAuthorName(tweets);
+		for (Status status : byAuthorName) {
+			System.out.println(status.getUser().getName() + " says:\t\t" + status.getText());
+		}
+		assertNotNull(byAuthorName);
 	}
 
 }

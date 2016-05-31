@@ -10,6 +10,12 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
+/**
+ * Classe de Aplicacao, le parametro de entrada e acessa as classes
+ * de Servico adequadas.
+ * 
+ * @author Rodrigo
+ */
 public class Application {
 	
 	private static Logger log = Logger.getLogger(Application.class.getName());
@@ -23,13 +29,12 @@ public class Application {
 			String resumeInformation = service.getResumeInformation();
 			
 			TweetSenderService sender = new TweetSenderService(twitter);
-			sender.updateStatusWithOverflow(resumeInformation);
+			sender.updateStatusWithOverflow(resumeInformation, "\n", "@michelpf");
 			
 		} catch (TwitterException e) {
 			log.warning(e.getLocalizedMessage());
 			e.printStackTrace();
 		}
-		//@michelpf 
 	}
 
 }

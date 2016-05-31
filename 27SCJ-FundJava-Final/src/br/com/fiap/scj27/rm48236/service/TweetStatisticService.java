@@ -66,7 +66,7 @@ public class TweetStatisticService {
 		String rtsLog = String.format("RTs Ult Dias [ASC]: %d, %d, %d, %d, %d, %d, %d", rIt.next(), rIt.next(), rIt.next(), rIt.next(), rIt.next(), rIt.next(), rIt.next(), rIt.next());
 		
 		Iterator<Integer> fIt = calculate.getFavoritesPerDay().values().iterator();
-		String favLog = String.format("RTs Ult Dias [ASC]: %d, %d, %d, %d, %d, %d, %d", fIt.next(), fIt.next(), fIt.next(), fIt.next(), fIt.next(), fIt.next(), fIt.next(), fIt.next());
+		String favLog = String.format("FAVs Ult Dias [ASC]: %d, %d, %d, %d, %d, %d, %d", fIt.next(), fIt.next(), fIt.next(), fIt.next(), fIt.next(), fIt.next(), fIt.next(), fIt.next());
 		
 		ArrayList<Status> byAuthorName = sorter.byAuthorName(tweets);
 		User first = byAuthorName.get(1).getUser();
