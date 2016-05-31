@@ -66,7 +66,7 @@ public class Statistics {
 			LocalDate tweetDate = LocalDate.of(date.getYear(), date.getMonth(), date.getDate());
 
 			if (!groupedTweetsPerDay.containsKey(tweetDate)) {
-				groupedTweetsPerDay.put(tweetDate, new ArrayList<>());
+				groupedTweetsPerDay.put(tweetDate, new ArrayList<Status>());
 			}
 			groupedTweetsPerDay.get(tweetDate).add(status);
 		}
