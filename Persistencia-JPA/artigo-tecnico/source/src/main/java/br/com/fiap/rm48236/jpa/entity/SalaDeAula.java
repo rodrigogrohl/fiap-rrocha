@@ -1,12 +1,14 @@
 /**
  * 
  */
-package br.com.fiap.rm48236.entity;
+package br.com.fiap.rm48236.jpa.entity;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class SalaDeAula {
@@ -14,8 +16,10 @@ public class SalaDeAula {
 	@Id
 	private Integer id;
 	
+	@Column
 	private String description;
 	
+	@OneToMany
 	private List<Aluno> alunos;
 
 	public Integer getId() {
