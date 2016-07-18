@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="jpa_48236" transaction-type="RESOURCE_LOCAL">
+	
+		<class>br.com.fiap.rm48236.artigo.jpa.entidade.Aluno</class>
+		<class>br.com.fiap.rm48236.artigo.jpa.entidade.Classe</class>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:C:\\Users\\rodrigor\\git\\fiap-rrocha\\Persistencia-JPA\\artigo-final\\poc-source\\database\\db" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="sa" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+			<!-- 
+			<property name="eclipselink.logging.level" value="FINE"/>
+			 -->
+	        <property name="hibernate.cache.provider_class"  value="org.hibernate.cache.EhCacheProvider"  />
+	        <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory" />
+	        <property name="hibernate.cache.use_second_level_cache" value="true" />
+	        <property name="hibernate.cache.use_query_cache" value="true" />
+	        <property name="hibernate.generate_statistics" value="true" />
+			<!-- 
+	        <property name="hibernate.cache.region_prefix" value=""/>
+        	<property name="net.sf.ehcache.configurationResourceName" value="/ehcache.xml"/>
+			 -->
+	        
+	        
+		</properties>
+	</persistence-unit>
+</persistence>
