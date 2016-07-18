@@ -42,4 +42,15 @@ public class Aluno {
 		this.classe = classe;
 	}
 
+	public Aluno(Integer matricula, String nome, String email, Classe classe) {
+		super();
+		this.matricula = matricula;
+		this.nome = nome;
+		this.email = email;
+		this.classe = classe;
+	}
+	public Aluno() {
+		// TODO Auto-generated constructor stub
+	}
+
 }

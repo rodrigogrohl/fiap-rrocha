@@ -19,6 +19,15 @@ public class Classe {
 
 	private List<Aluno> alunos;
 
+	public Classe() { }
+	
+	public Classe(Integer id, String sigla, String coordenador) {
+		super();
+		this.id = id;
+		this.sigla = sigla;
+		this.coordenador = coordenador;
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -50,5 +59,12 @@ public class Classe {
 	public void setAlunos(List<Aluno> alunos) {
 		this.alunos = alunos;
 	}
+
+	@Override
+	public String toString() {
+		return "Classe [id=" + id + ", sigla=" + sigla + ", coordenador="
+				+ coordenador + "]";
+	}
+	
 
 }

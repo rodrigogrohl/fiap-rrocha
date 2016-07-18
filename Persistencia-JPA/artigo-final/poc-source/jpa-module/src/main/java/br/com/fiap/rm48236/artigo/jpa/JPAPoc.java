@@ -26,10 +26,10 @@ public class JPAPoc {
 	
 	public static void main(String[] args) {
 		// Transacao com 10 Classes com 50 alunos cada
-		//new JPAPoc().transactionTest(10, 50);
+		new JPAPoc().transactionTest(10, 50);
 		
 		// Operacao com Cache
-		//new JPAPoc().cacheTest();
+		new JPAPoc().cacheTest();
 		
 		// Concorrencia
 		new JPAPoc().concurrencyTest();
@@ -114,10 +114,13 @@ public class JPAPoc {
 			//System.out.println(c);
 			count++;
 			List<Aluno> alunos = c.getAlunos();
+			count += alunos.size();
+			/*
 			for (Aluno aluno : alunos) {
-				//System.out.println(aluno);
+				System.out.println(aluno);
 				count++;
 			}
+			*/
 		}
 		System.out.println("Total Read entities: " + count);
 	}

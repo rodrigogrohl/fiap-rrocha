@@ -127,3 +127,85 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/Users/rod
 2016-07-18 17:04:15 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
 update Classe set coordenador=?, sigla=? where id=? [50200-192]
+2016-07-18 17:15:22 database: wrong user or password; user: ""
+org.h2.message.DbException: Wrong user name or password [28000-192]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:118)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:102)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at br.com.fiap.rm48236.artigo.jdbc.conexao.JDBCUtil.getConnection(JDBCUtil.java:25)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.main(JDBCPoc.java:15)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 16 more
+2016-07-18 17:36:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: No data is available [2000-192]
+2016-07-18 17:38:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "0" for parameter "columnIndex" [90008-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:228)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3172)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3200)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:321)
+	at br.com.fiap.rm48236.artigo.jdbc.conexao.JdbcDAO.adicionarClasse(JdbcDAO.java:30)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.transactionTest(JDBCPoc.java:47)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.main(JDBCPoc.java:20)
+2016-07-18 17:40:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ID" not found [42122-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3155)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3217)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:339)
+	at br.com.fiap.rm48236.artigo.jdbc.conexao.JdbcDAO.adicionarClasse(JdbcDAO.java:30)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.transactionTest(JDBCPoc.java:47)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.main(JDBCPoc.java:20)
+2016-07-18 17:42:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ID" not found [42122-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3155)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3217)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:339)
+	at br.com.fiap.rm48236.artigo.jdbc.conexao.JdbcDAO.adicionarClasse(JdbcDAO.java:32)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.transactionTest(JDBCPoc.java:47)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.main(JDBCPoc.java:20)
+2016-07-18 18:26:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ID_CLASSE" not found; SQL statement:
+SELECT * FROM ALUNO WHERE ID_CLASSE = 1 [42122-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:178)
+	at org.h2.command.dml.Select.prepare(Select.java:855)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:560)
+	at org.h2.engine.Session.prepareCommand(Session.java:501)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1202)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:290)
+	at br.com.fiap.rm48236.artigo.jdbc.conexao.JdbcDAO.listarAlunos(JdbcDAO.java:69)
+	at br.com.fiap.rm48236.artigo.jdbc.conexao.JdbcDAO.listar(JdbcDAO.java:60)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.listar(JDBCPoc.java:88)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.cacheTest(JDBCPoc.java:67)
+	at br.com.fiap.rm48236.artigo.jdbc.JDBCPoc.main(JDBCPoc.java:20)
+2016-07-18 18:41:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "INTO" not found; SQL statement:
+update into Classe (sigla,coordenador) values (?,?) WHERE id = ? [42102-192]
+2016-07-18 18:43:16 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Timeout trying to lock table ; SQL statement:
+update Classe SET sigla = ?, coordenador = ? WHERE id = ? [50200-192]

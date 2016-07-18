@@ -8,7 +8,7 @@ import br.com.fiap.rm48236.artigo.jdbc.util.JDBCException;
 
 public class JDBCUtil {
 	
-	private static final String URI = "C:\\Users\\rodrigor\\git\\fiap-rrocha\\Persistencia-JPA\\artigo-final\\poc-source\\jdbc-module\\h2-database";
+	private static final String URI = "C:\\Users\\rodrigor\\git\\fiap-rrocha\\Persistencia-JPA\\artigo-final\\poc-source\\database\\db";
 	
 	public JDBCUtil() throws JDBCException {
 
@@ -22,7 +22,7 @@ public class JDBCUtil {
 	
 	public Connection getConnection() throws JDBCException {
 		try {
-			return DriverManager.getConnection("jdbc:h2:" + URI);
+			return DriverManager.getConnection("jdbc:h2:" + URI + ";USER=sa;PASSWORD=sa");
 		} catch (SQLException e) {
 			throw new JDBCException(e.getLocalizedMessage(), e);
 		}
