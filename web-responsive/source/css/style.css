@@ -1,0 +1,47 @@
+nav ul li {
+    display: inline;
+    margin: 5px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    text-emphasis: 3px;
+}
+
+body {
+    background-color: #F2F2F2;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+nav {
+    background-color: coral;
+    color: whitesmoke;
+    padding: 2px;
+    margin: 0px;
+}
+
+header {
+    margin: 15px;
+    background-color: darkslategray;
+    text-align: center;
+    border: 0px;
+    border-radius: 15px;
+    color: whitesmoke;
+    padding: 2px;
+    margin: 15px;
+}
+
+footer {
+    background-color: darkslategray;
+    text-align: center;
+    border: 0px;
+    #border-radius: 15px;
+    color: whitesmoke;
+    padding: 15px;
+}
+
+article{
+    margin: 15px;
+}
