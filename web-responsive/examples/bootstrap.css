@@ -32,7 +32,10 @@ article {
 aside,
 details,
 figcaption,
-figure,
+figure {
+  margin: 0;
+  padding: 20px;
+}
 footer,
 header {
   margin: 0;
@@ -1337,7 +1340,9 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 39px;
+  font-size: 60px;
+  padding-bottom: 20px;
+  /*font-family: "Helvetica Neue";*/
 }
 h2,
 .h2 {
