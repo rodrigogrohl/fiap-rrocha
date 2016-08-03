@@ -1,6 +1,7 @@
 package br.com.rrocha.FundamentosJava.aula05;
 
 public class Corrida {
+	
 	public static void main(String[] args) {
 		
 		Cavalo c1 = new Cavalo("Pé de Pano");
@@ -21,4 +22,5 @@ public class Corrida {
 		t4.start();
 		t5.start();
 	}
+	
 }

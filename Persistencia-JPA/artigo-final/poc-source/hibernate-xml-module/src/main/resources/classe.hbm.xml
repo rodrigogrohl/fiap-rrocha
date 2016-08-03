@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="br.com.fiap.rm48236.artigo.hibxml.entidade.Classe" table="CLASSE">
+		<id name="id" type="java.lang.Integer">
+			<generator class="identity" />
+		</id>
+		
+		<!-- 
+        <set name="alunos" table="ALUNO" 
+				inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CLASSE_ID" not-null="true" />
+            </key>
+            <one-to-many class="br.com.fiap.rm48236.artigo.hibxml.entidade.Aluno" />
+        </set>
+      <set name="alunos" cascade="all">
+         <key column="CLASSE_ID"/>
+         <one-to-many class="br.com.fiap.rm48236.artigo.hibxml.entidade.Aluno"/>
+      </set>        		
+		 -->
+		
+		<property name="sigla" type="string">
+			<column name="SIGLA" not-null="true" />
+		</property>
+		<property name="coordenador" type="string">
+			<column name="COORDENADOR" not-null="true" />
+		</property>
+	</class>
+</hibernate-mapping>
