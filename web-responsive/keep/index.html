@@ -1,0 +1,63 @@
+<!doctype HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Card Container</title>
+        <link rel="stylesheet" href="estilos.css">
+        <meta name="viewport" content="width:device-width">
+    </head>
+    <body>
+        <h1 class="cabecalho container">
+                TO-DO List
+        </h1>
+        <form class="novoCartao container">
+            <textarea class="novaNota-conteudo" name="novaNota-Conteudo" placeholder="Nova Nota"></textarea>
+            <input type="submit" class="lista" value="Lista"/>
+        </form>
+        
+        <section class="mural">
+
+            <div class="cartao">
+                <p class="cartao-conteudo">
+                    Cartao 1.
+                </p>
+            </div>
+
+            <div class="cartao">
+                <p class="cartao-conteudo">
+                    Cartao 2.
+                </p>
+            </div>
+
+            <div class="cartao">
+                <p class="cartao-conteudo">
+                    Cartao 3.
+                </p>
+            </div>
+            
+            <div class="cartao">
+                <p class="cartao-conteudo">
+                    Cartao 4.
+                </p>
+            </div>
+        </section>
+        
+    </body>
+</html>
+
+<script src="jquery-3.1.0.js"></script>
+
+<script type="application/javascript">
+    $(document).ready( function()  {
+        var form = $(".novoCartao");
+        
+        form.on("submit", function(event) {
+            $("<div>", {"class" : "cartao"})
+                .text( $("textarea").val() )
+                .appendTo($(".mural"));
+            event.preventDefault();
+            
+        });
+        
+    });
+</script>
