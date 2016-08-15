@@ -46,11 +46,13 @@ Ameaças: (1) Grandes empresas de tecnologia detentoras de muitos recursos financ
 
 Como Arquiteto Estratégico / Negócios, faça:
 1. Desenhe uma nova proposta de processo de negócios (BPMN) com base nas tecnologias escolhidas no slide anterior, para:
-
 a. Aluguel, Venda ou Distribuição do Produto aos Clientes 
 b. Efetivar Vendas e garantia de Recebimentos (Faturamento)
 c. Divulgação da brand assim como manter e criar os melhores canais de relacionamento / comunicação e fidelização de clientes “prospects”
-Obs: Não esqueça de desenhar as atividades não funcionais do BPMN, tais como: “Contingência”, “Meios de Pagamentos”, “Canais de Distribuição”, “Perfis de Consumidores”, “FailOver”, “Parcerias”, “Anti-Fraudes”, “Moedas para multi-mercados”.
+Obs: Não esqueça de desenhar as atividades não funcionais do BPMN, tais como: 
+“Contingência”, “Meios de Pagamentos”, “Canais de Distribuição”, “Perfis de Consumidores”, “FailOver”, “Parcerias”, “Anti-Fraudes”, “Moedas para multi-mercados”.
+
+
 
 2. Defina um Organograma Inicial da Empresa
 
