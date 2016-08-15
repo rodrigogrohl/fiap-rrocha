@@ -1,0 +1,73 @@
+Como Arquiteto Estratégico faça:
+1. Você como Arquiteto Estratégico, quais decisões estratégicas a uBeam precisa efetivar no âmbito da sua solução, e quais são as suas recomendações para cada dessas decisões, e como aplica-las de forma efetiva durante as Olimpíadas Rio 2016? 
+
+Primeiramente, identificamos locais onde há grande concentração de pessoas, que possam ser expostas, de forma legítima, à tecnologia da startup. Para isso, acreditamos que isso pode ser alcançado através da implementação da tecnologia em estabelecimentos com os quais possam ser feitas parcerias.   
+Nesse sentido, selecionamos alguns hotéis e quiosques em praias, estabeleciments que entendemos ser interessantes para atender essa finalidade. Em ambos, a concentração e o fluxo de pessoas será, durante os jogos olímpicos, tão grande, que a ação de marketing poderá resultar em bons frutos em termos de branding.   
+Obviamente, a celebração da parceria com grandes redes hoteleiras dependerá de contratos de parceria, que, para serem firmados, deverão resultar em um benefício para essas redes. Porém, acreditamos que a oferta em si de uma tecnologia inovadora, oferecida de forma gratuita durante os jogos olímpicos, será um elemento que chamará a atenção dos parceiros, a ponto de convencê-los da importância da parceria.  
+Por outro lado, acreditamos também que é importante que a startup tenha um stand fisicamente presente para mostrar a presença da empresa durante os eventos olímpicos. Tedo e vista a otoriedade e visibilidade dos Postos as praias ais obres do Rio de Janeiro, lá conseguiremos atingir um grande público, não apenas brasileiro, mas também internacional.  
+
+
+2. A uBeam é uma startup. Como é que as suas recomendações estratégicas serão diferentes e “matadoras” do que, digamos, da Microsoft ou da Google ou da Apple, se estes lançarem uma solução similar? 
+
+O diferencial de qualquer startup em relação a empresas tradicionais é a capacidade de inovação e tomada de decisões de forma rápida. Portanto, perante os grandes players como Google, Microsoft e Apple, esta startup conseguirá desenvolver ações de marketing muito rápidas e de forma bastante flexível, de tal forma que os efeitos possam ser rapidamente vistos.  
+Considerando isso, a implementação das estratégias de divulgação enumeradas no item 1 acima pode ser feita muito rapidamente, sem a camada burocrática, típica das grandes empresas já estabelecidas no mercado.  
+Por exemplo, a uBeam poderá divulgar seus kits do seu produto nos pontos de divulgação estrategicamente definidos (hotéis e quiosques nas praias). Para obter um efeito de divulgação importante, poderá enviar gratuitamente kits às pessoas que se cadastrarem em sua base de dados, além de implementar uma forte campanha nas redes sociais antes dos jogos. Espera-se que a somatória desse conjunto de ações possa ter um resultado positivo para o desenvolvimento de sua marca. 
+
+
+3. Escreve a MISSÃO da uBeam com base nas suas estratégias elaboradas.
+
+A uBeam tem como missão oferecer acesso à energia de forma prática, rápida e barata para dispositos móveis de seus clientes. 
+
+
+4. Analise SWOT  (Forças, Fraquezas, Oportunidades e Ameaças).
+
+Forças: (1) Capacidade de inovação; (2) flexibilidade; (3) baixo custo (metodologia lean startup); (4) Conhecimento aprofundado sobre a tecnologia desenvolvida (Julia); (5) alta performance e qualidade do produto; (6) exclusividade; (7) tecnologia disruptiva; (8) portabilidade do produto (praticidade).  
+Oportunidades: (1) referência mundial neste mercado; (2) mercado inexplorado; (3) possibilidade de explorar novos produtos relacionados ao produto; (4) possibilidade de explorar novas e importantes parcerias estratégicas; (5) possibilidade de padronizar o mecanismo de recarga energética de produtos tecnológicos em qualquer local do mundo; (6) vender serviços de consultoria para a utilização/implementação do produto por outras empresas; (7) redução do consumo de energia; (8) utilização da tecnologia em mercados distintos, como o de automobilismo, aeroespacial etc.  
+Fraquezas: (1) produto não pode ser patenteado; (2) baixo poder de investimento; (3) infra-estrutura de produção inexistente; (4) inexperiência comercial e administrativa no tocante ao desenvolvimento de uma empresa; (5) não ter ainda uma equipe consolidada; (6) o fato de a inventora da tecnlogia ser a única detentora do conhecimento tecnológico do produto; (7) egocentrismo da inventora do produto (negou a compra da sua startup por um volume alto de capital); (8) possível incapacidade de ação rápida para conquista do mercado.  
+Ameaças: (1) Grandes empresas de tecnologia detentoras de muitos recursos financeiros; (2) Grandes empresas de tecnologia detentoras de excelentes recursos técnicos (engenheiros, programadores etc) capazes de copiar o produto; (3) possibilidade de empresas de tecnologia mudem o formato da entrada de áudio, inviabilizando o uso do produto da uBeam; (4) espionagem industrial; (5) pirataria; (6) possível interferência de outras ondas sonoras, capazes de inviabilizar as ondas de ultrassom emitidas; (7) outras startups, com ambição e dinamicidade equivalentes; (8) órgaos regulatórios e legislações existentes ao redor do mundo. 
+
+
+5. Escolher 5 Metas Estratégicas para cumprir a missão da uBeam em 5 anos.
+
+(i) Desenvolvimento de uma marca sólida e reconhecida pelos usuários de produtos tecnológicos através de uma ação de marketing muito bem implementada; 
+(ii) Produção em larga escala de seus produtos em pontos estratégicos ao redor do globo; 
+(iii) Desenvolvimento de novas frentes de utilização do produto, considerando outras tecnologias já existentes ou que serão desenvolvidas (e.g., computadores, televisores etc); 
+(iv) Estabelecimento de parcerias estratégicas com empresas e governos que possam se beneficiar do uso e desenvolvimento dessa tecnologia; e 
+(v) Busca por talentos, capazes de trazer maior inovação para o produto. 
+
+
+6. Escolher até 5 Tecnologias Inovadoras complementares para melhorar a solução da uBeam ou para compor novos produtos / serviços para seu lançamento mundial, faça uma RoadMap para esses novos produtos /serviços.
+(i) SOA; 
+(ii) Internet das Coisas e Wearables; 
+(iii) M-Payment; 
+(iv) M-Commerce; e 
+(v) Redes Sociais
+
+
+Como Arquiteto Estratégico / Negócios, faça:
+1. Desenhe uma nova proposta de processo de negócios (BPMN) com base nas tecnologias escolhidas no slide anterior, para:
+
+a. Aluguel, Venda ou Distribuição do Produto aos Clientes 
+b. Efetivar Vendas e garantia de Recebimentos (Faturamento)
+c. Divulgação da brand assim como manter e criar os melhores canais de relacionamento / comunicação e fidelização de clientes “prospects”
+Obs: Não esqueça de desenhar as atividades não funcionais do BPMN, tais como: “Contingência”, “Meios de Pagamentos”, “Canais de Distribuição”, “Perfis de Consumidores”, “FailOver”, “Parcerias”, “Anti-Fraudes”, “Moedas para multi-mercados”.
+
+2. Defina um Organograma Inicial da Empresa
+
+Como Arquiteto de Soluções faça:
+1. Desenho da Arquitetura Lógica para uBeam:
+ a. Diagrama de Visão Geral da Arquitetura
+
+Como Arquiteto de Tecnologia faça:
+1. Desenho da Arquitetura Física para uBeam:
+ a. Diagrama de Visão Geral da Arquitetura
+
+2. Catálogo de Serviços:
+ a. Lista de Serviços oriundas do BPMNs
+
+Como Arquiteto Estratégico faça:
+1. Gamificação:
+ a. Aplicar os conceitos de Gamificação para a divulgação da uBeam nas Olimpíadas 2016 – Rio (escreva essa estratégia).
+
+
+

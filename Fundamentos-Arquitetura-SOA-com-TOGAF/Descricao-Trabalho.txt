@@ -1,0 +1,36 @@
+Como Arquiteto Estratégico faça:
+1. Você como Arquiteto Estratégico, quais decisões estratégicas a uBeam precisa efetivar no âmbito da sua solução, e quais são as suas recomendações para cada dessas decisões, e como aplica-las de forma efetiva durante as Olimpíadas Rio 2016? 
+2. A uBeam é uma startup. Como é que as suas recomendações estratégicas serão diferentes e “matadoras” do que, digamos, da Microsoft ou da Google ou da Apple, se estes lançarem uma solução similar? 
+3. Escreve a MISSÃO da uBeam com base nas suas estratégias elaboradas.
+4. Analise SWOT  (Forças, Fraquezas, Oportunidades e Ameaças).
+5. Escolher 5 Metas Estratégicas para cumprir a missão da uBeam em 5 anos.
+6. Escolher até 5 Tecnologias Inovadoras complementares para melhorar a solução da uBeam ou para compor novos produtos / serviços para seu lançamento mundial, faça uma RoadMap para esses novos produtos /serviços.
+
+
+Como Arquiteto Estratégico / Negócios, faça:
+1. Desenhe uma nova proposta de processo de negócios (BPMN) com base nas tecnologias escolhidas no slide anterior, para:
+
+a. Aluguel, Venda ou Distribuição do Produto aos Clientes 
+b. Efetivar Vendas e garantia de Recebimentos (Faturamento)
+c. Divulgação da brand assim como manter e criar os melhores canais de relacionamento / comunicação e fidelização de clientes “prospects”
+Obs: Não esqueça de desenhar as atividades não funcionais do BPMN, tais como: “Contingência”, “Meios de Pagamentos”, “Canais de Distribuição”, “Perfis de Consumidores”, “FailOver”, “Parcerias”, “Anti-Fraudes”, “Moedas para multi-mercados”.
+
+2. Defina um Organograma Inicial da Empresa
+
+Como Arquiteto de Soluções faça:
+1. Desenho da Arquitetura Lógica para uBeam:
+ a. Diagrama de Visão Geral da Arquitetura
+
+Como Arquiteto de Tecnologia faça:
+1. Desenho da Arquitetura Física para uBeam:
+ a. Diagrama de Visão Geral da Arquitetura
+
+2. Catálogo de Serviços:
+ a. Lista de Serviços oriundas do BPMNs
+
+Como Arquiteto Estratégico faça:
+1. Gamificação:
+ a. Aplicar os conceitos de Gamificação para a divulgação da uBeam nas Olimpíadas 2016 – Rio (escreva essa estratégia).
+
+
+
