@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Configurações</string>
+    <string name="user">Usuário</string>
+    <string name="title_activity_login">Acesse sua Conta</string>
+    <string name="msg_informe_nome_usuario">Informe o nome do Usuário.</string>
+    <string name="senha">Senha</string>
+    <string name="msg_input_password">Digite sua senha</string>
+    <string name="login">Entrar</string>
+    <string name="msg_invalid_login">Usuário ou Senha Inválidos</string>
+</resources>
