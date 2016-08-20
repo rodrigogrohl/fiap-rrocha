@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
+import javax.persistence.PersistenceContext;
 
 import br.com.fiap.entity.Funcionario;
 
@@ -16,14 +16,14 @@ import br.com.fiap.entity.Funcionario;
 @LocalBean
 public class FuncionarioService implements FuncionarioServiceRemote {
 
-	@PersistenceUnit(name = "fiapPU")
-	private EntityManager em;
+	@PersistenceContext(name = "fiapPU")
+	EntityManager em;
 	
     public FuncionarioService() { }
     
     @Override
 	public List<Funcionario> listAll() {
-    	return em.createNamedQuery("SELECT * FROM Funcionario", Funcionario.class).getResultList();
+    	return em.createQuery("SELECT f FROM Funcionario f", Funcionario.class).getResultList();
 	}
 
 	@Override

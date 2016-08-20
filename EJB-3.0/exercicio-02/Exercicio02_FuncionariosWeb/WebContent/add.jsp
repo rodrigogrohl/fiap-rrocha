@@ -11,7 +11,7 @@
 <body>
 	<h1>Adicionar Funcionario</h1>
 	
-	<form action="funcionario">
+	<form action="funcionario" method="post">
 		CPF: <input type="text" name="cpf"> <br>
 		Nome: <input type="text" name="nome"> <br>
 		Cargo: <input type="text" name="cargo"> <br>
