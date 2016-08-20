@@ -1,0 +1,2 @@
+https://jhipster.github.io/
+https://www.graylog.org/
