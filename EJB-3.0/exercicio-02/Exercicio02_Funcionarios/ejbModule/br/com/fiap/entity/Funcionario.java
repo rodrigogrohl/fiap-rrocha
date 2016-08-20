@@ -2,7 +2,9 @@ package br.com.fiap.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity 
@@ -11,16 +13,22 @@ public class Funcionario implements Serializable {
 
 	private static final long serialVersionUID = 783872226987875032L;
 
+	@Id
 	private String cpf;
 	
+	@Column
 	private String nome;
 	
+	@Column
 	private String cargo;
 	
+	@Column
 	private Double salario;
 	
+	@Column
 	private Double irpf;
 	
+	@Column
 	private Double inss;
 	
 	public Funcionario() { }
