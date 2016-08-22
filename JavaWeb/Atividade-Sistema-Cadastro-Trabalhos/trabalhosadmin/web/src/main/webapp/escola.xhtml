@@ -19,8 +19,8 @@
    xmlns:ui="http://java.sun.com/jsf/facelets"
    xmlns:f="http://java.sun.com/jsf/core"
    xmlns:h="http://java.sun.com/jsf/html"
-   template="/WEB-INF/templates/default.xhtml"
-   xmlns:p="http://primefaces.org/ui"  >
+   xmlns:p="http://primefaces.org/ui"
+   template="/WEB-INF/templates/default.xhtml">
    <ui:define name="content">
       <h1>Cadastrar Escola</h1>
 
@@ -45,42 +45,34 @@
 
          <p>
             <h:panelGrid columns="2">
-            	<h:commandButton id="register" action="#{escolaBean.cadastar}" value="Registar" styleClass="register"/>
-               <h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
+            	<p:commandButton id="register" ajax="false" actionListener="#{escolaBean.cadastar}" value="Registar"/>
+            	<h:messages styleClass="messages" errorClass="invalid" infoClass="valid" warnClass="warning"
                            globalOnly="true"/>
             </h:panelGrid>
          </p>
       </h:form>
-      <!-- 
-      <h2>Members</h2>
-      <h:panelGroup rendered="#{empty members}">
-         <em>No registered members.</em>
+      
+      <h2>Lista de Escolas</h2>
+      <h:panelGroup rendered="#{empty escolaBean.lista}">
+         <em>Sem Escolas Cadastradas.</em>
       </h:panelGroup>
-      <h:dataTable var="_member" value="#{members}" rendered="#{not empty members}" styleClass="simpletablestyle">
-         <h:column>
+      <p:dataTable var="_escola" value="#{escolaBean.lista}" rendered="#{not empty escolaBean.lista}">
+         <p:column>
             <f:facet name="header">Id</f:facet>
-                #{_member.id}
-            </h:column>
-         <h:column>
-            <f:facet name="header">Name</f:facet>
-                #{_member.name}
-            </h:column>
-         <h:column>
-            <f:facet name="header">Email</f:facet>
-                #{_member.email}
-            </h:column>
-         <h:column>
-            <f:facet name="header">Phone #</f:facet>
-                #{_member.phoneNumber}
-            </h:column>
-         <h:column>
+                #{_escola.id}
+         </p:column>
+         <p:column>
+            <f:facet name="header">Nome</f:facet>
+                #{_escola.nome}
+         </p:column>
+         <p:column>
             <f:facet name="header">REST URL</f:facet>
-            <a href="#{request.contextPath}/rest/members/#{_member.id}">/rest/members/#{_member.id}</a>
-         </h:column>
+            <a href="#{request.contextPath}/rest/escola/#{_member.id}">/rest/escolas/#{_escola.id}</a>
+         </p:column>
          <f:facet name="footer">
-            REST URL for all members: <a href="#{request.contextPath}/rest/members">/rest/members</a>
+            REST URL for all members: <a href="#{request.contextPath}/rest/escolas">/rest/escolas</a>
          </f:facet>
-      </h:dataTable>
-       -->
+      </p:dataTable>
+       
    </ui:define>
 </ui:composition>

@@ -4,8 +4,9 @@
 package br.com.fiap.controller;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.enterprise.inject.Model;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -17,7 +18,7 @@ import br.com.fiap.service.EscolaService;
  *
  */
 
-@Model
+@SessionScoped
 @Named(value = "escolaBean")
 public class EscolaController implements Serializable {
 	
@@ -25,11 +26,15 @@ public class EscolaController implements Serializable {
 
 	private Escola escola;
 	
+	private List<Escola> lista;
+	
 	@Inject
 	private EscolaService service;
 	
-	public void cadastar() {
-		service.cadastrar(escola);		
+	public String cadastar() {
+		service.cadastrar(escola);
+		lista = null;
+		return "escola.jsp";
 	}
 
 	public Escola getEscola() {
@@ -40,6 +45,16 @@ public class EscolaController implements Serializable {
 
 	public void setEscola(Escola escola) {
 		this.escola = escola;
+	}
+
+	public List<Escola> getLista() {
+		if(lista == null)
+			lista = service.listar();
+		return lista;
+	}
+
+	public void setLista(List<Escola> lista) {
+		this.lista = lista;
 	}
 	
 }
