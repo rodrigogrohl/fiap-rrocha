@@ -56,6 +56,7 @@ Obs: Não esqueça de desenhar as atividades não funcionais do BPMN, tais como:
 
 2. Defina um Organograma Inicial da Empresa
 
+
 Como Arquiteto de Soluções faça:
 1. Desenho da Arquitetura Lógica para uBeam:
  a. Diagrama de Visão Geral da Arquitetura
