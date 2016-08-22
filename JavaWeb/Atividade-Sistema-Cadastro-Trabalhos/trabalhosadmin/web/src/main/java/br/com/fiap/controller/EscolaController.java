@@ -5,6 +5,7 @@ package br.com.fiap.controller;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -31,9 +32,14 @@ public class EscolaController implements Serializable {
 	@Inject
 	private EscolaService service;
 	
+    @Inject
+    private Logger log;
+	
 	public String cadastar() {
 		service.cadastrar(escola);
+		log.info("Persisted: " + escola);
 		lista = null;
+		escola = null;
 		return "escola.jsp";
 	}
 

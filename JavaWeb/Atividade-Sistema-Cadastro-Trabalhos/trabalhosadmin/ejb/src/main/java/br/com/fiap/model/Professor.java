@@ -39,4 +39,10 @@ public class Professor implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	@Override
+	public String toString() {
+		return "Professor [id=" + id + ", nome=" + nome + "]";
+	}
+	
 }

@@ -44,4 +44,10 @@ public class Aluno implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	@Override
+	public String toString() {
+		return "Aluno [id=" + id + ", nome=" + nome + ", cursos=" + cursos + "]";
+	}
+	
 }

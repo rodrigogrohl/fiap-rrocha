@@ -57,6 +57,7 @@
          <em>Sem Escolas Cadastradas.</em>
       </h:panelGroup>
       <p:dataTable var="_escola" value="#{escolaBean.lista}" rendered="#{not empty escolaBean.lista}">
+
          <p:column>
             <f:facet name="header">Id</f:facet>
                 #{_escola.id}
@@ -65,6 +66,13 @@
             <f:facet name="header">Nome</f:facet>
                 #{_escola.nome}
          </p:column>
+		<p:column>
+			<h:form>
+				<p:commandButton ajax="false" action="#{cursoBean.novo}" value="Inserir Cursos">
+					<f:setPropertyActionListener target="#{escolaBean.escola}" value="#{_escola}" />
+				</p:commandButton>
+			</h:form>
+		</p:column>
          <p:column>
             <f:facet name="header">REST URL</f:facet>
             <a href="#{request.contextPath}/rest/escola/#{_member.id}">/rest/escolas/#{_escola.id}</a>

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,7 +27,7 @@ public class Escola implements Serializable {
 	@Column
 	private String nome;
 	
-	@OneToMany
+	@OneToMany(fetch = FetchType.EAGER)
 	private List<Curso> cursos;
 
 	public Integer getId() {
@@ -52,5 +53,11 @@ public class Escola implements Serializable {
 	public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
 	}
+
+	@Override
+	public String toString() {
+		return "Escola [id=" + id + ", nome=" + nome + ", cursos=" + cursos + "]";
+	}
+	
 
 }
