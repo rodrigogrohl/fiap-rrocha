@@ -1,3 +1,5 @@
+https://www.mkyong.com/jsf2/4-ways-to-pass-parameter-from-jsf-page-to-backing-bean/
+
 trabalhosadmin: Example Using Multiple Java EE 6 Technologies Deployed as an EAR
 ==============================================================================================
 Author: Pete Muir
