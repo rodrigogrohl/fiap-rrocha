@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import br.com.fiap.data.ProfessorRepository;
+import br.com.fiap.model.Escola;
 import br.com.fiap.model.Professor;
 
 @Stateless
@@ -22,8 +23,8 @@ public class ProfessorService {
 		repository.atualizar(professor);
 	}
 	
-	public List<Professor> listar() {
-		return repository.listar();
+	public List<Professor> listar(final Escola escola) {
+		return repository.listar(escola);
 	}
 	
 	public Professor buscar(final Integer id) {

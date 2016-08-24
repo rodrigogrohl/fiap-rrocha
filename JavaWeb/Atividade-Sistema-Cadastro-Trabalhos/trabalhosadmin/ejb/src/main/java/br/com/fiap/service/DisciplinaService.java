@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 import br.com.fiap.data.DisciplinaRepository;
+import br.com.fiap.model.Curso;
 import br.com.fiap.model.Disciplina;
 
 @Stateless
@@ -22,8 +23,8 @@ public class DisciplinaService {
 		repository.atualizar(disciplina);
 	}
 	
-	public List<Disciplina> listar() {
-		return repository.listar();
+	public List<Disciplina> listar(Curso curso) {
+		return repository.listar(curso);
 	}
 	
 	public Disciplina buscar(final Integer id) {

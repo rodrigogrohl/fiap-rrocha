@@ -29,7 +29,24 @@ public class Escola implements Serializable {
 	
 	@OneToMany(fetch = FetchType.EAGER)
 	private List<Curso> cursos;
-
+	
+	@OneToMany
+	private List<Professor> professores;
+	
+	public int getTotalCursos() {
+		if(cursos != null) {
+			return cursos.size();
+		}
+		return 0;
+	}
+	
+	public int getTotalProfessores() {
+		if(professores != null) {
+			return professores.size();
+		}
+		return 0;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -52,6 +69,14 @@ public class Escola implements Serializable {
 
 	public void setCursos(List<Curso> cursos) {
 		this.cursos = cursos;
+	}
+
+	public List<Professor> getProfessores() {
+		return professores;
+	}
+
+	public void setProfessores(List<Professor> professores) {
+		this.professores = professores;
 	}
 
 	@Override

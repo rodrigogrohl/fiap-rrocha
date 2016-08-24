@@ -34,11 +34,11 @@ public class EscolaController implements Serializable {
 	
     @Inject
     private Logger log;
-	
+    
 	public String cadastar() {
 		service.cadastrar(escola);
 		log.info("Persisted: " + escola);
-		lista = null;
+		lista = service.listar();
 		escola = null;
 		return "escola.jsp";
 	}

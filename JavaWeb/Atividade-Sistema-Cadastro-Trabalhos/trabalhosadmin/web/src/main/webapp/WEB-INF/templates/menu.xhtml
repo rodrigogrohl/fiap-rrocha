@@ -8,11 +8,11 @@
  	
 	    <p:menu>
 	        <p:submenu label="Cadastros">
-	            <p:menuitem value="Escola" action="escola.jsf" update="messages" icon="ui-icon-home" />
-	            <p:menuitem value="Curso" action="curso.jsf" update="messages" icon="ui-icon-suitcase"/>
-	            <p:menuitem value="Professor" action="professor.jsf" update="messages" icon="ui-icon-contact"/>
-	            <p:menuitem value="Disciplina" action="disciplina.jsf" update="messages" icon="ui-icon-folder-open"/>
-	            <p:menuitem value="Disciplina" action="disciplina.jsf" update="messages" icon="ui-icon-person"/>
+	            <p:menuitem value="Escola" ajax="false" action="escola.jsf" icon="ui-icon-home" />
+	            <p:menuitem value="Curso" action="curso.jsf" ajax="false" icon="ui-icon-suitcase" rendered="#{not empty userSessionBean.escolaSelecionada}"/>
+	            <p:menuitem value="Professor" action="professor.jsf" ajax="false" icon="ui-icon-contact" rendered="#{not empty userSessionBean.escolaSelecionada}"/>
+	            <p:menuitem value="Disciplina" action="disciplina.jsf" ajax="false" icon="ui-icon-folder-open" rendered="#{not empty userSessionBean.cursoSelecionado}"/>
+	            <p:menuitem value="Aluno" action="aluno.jsf" ajax="false" icon="ui-icon-person"/>
 	            
 	        </p:submenu>
 	        <p:submenu label="Non-Ajax">

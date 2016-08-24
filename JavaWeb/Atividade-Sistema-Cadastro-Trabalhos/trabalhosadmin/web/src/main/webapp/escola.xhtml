@@ -14,16 +14,7 @@
             <h:outputLabel for="name" value="Nome:"/>
             <h:inputText id="name" value="#{escolaBean.escola.nome}" />
             <h:message for="name" errorClass="invalid"/>
-			
-			<!-- 
-            <h:outputLabel for="email" value="Email:"/>
-            <h:inputText id="email" value="#{newMember.email}"/>
-            <h:message for="email" errorClass="invalid"/>
 
-            <h:outputLabel for="phoneNumber" value="Phone #:"/>
-            <h:inputText id="phoneNumber" value="#{newMember.phoneNumber}"/>
-            <h:message for="phoneNumber" errorClass="invalid"/>
-			 -->
          </h:panelGrid>
 
          <p>
@@ -51,22 +42,18 @@
 	            <f:facet name="header">Nome</f:facet>
 	                #{_escola.nome}
 	         </p:column>
-			<p:column width="20%" style="text-align:center;">
+			<p:column width="40%" style="text-align:center;">
 				<h:form>
-					<p:commandButton ajax="false" action="#{cursoBean.novo}" value="Inserir Cursos">
-						<f:setPropertyActionListener target="#{escolaBean.escola}" value="#{_escola}" />
+					<p:commandButton ajax="false" action="curso.jsf" value="Cursos">
+						<f:setPropertyActionListener target="#{userSessionBean.escolaSelecionada}" value="#{_escola}" />
+					</p:commandButton>
+					<p:spacer></p:spacer>
+					<p:commandButton ajax="false" action="professor.jsf" value="Professores">
+						<f:setPropertyActionListener target="#{userSessionBean.escolaSelecionada}" value="#{_escola}" />
 					</p:commandButton>
 				</h:form>
 			</p:column>
-			<!-- 
-	         <p:column>
-	            <f:facet name="header">REST URL</f:facet>
-	            <a href="#{request.contextPath}/rest/escola/#{_member.id}">/rest/escolas/#{_escola.id}</a>
-	         </p:column>
-	         <f:facet name="footer">
-	            REST URL for all members: <a href="#{request.contextPath}/rest/escolas">/rest/escolas</a>
-	         </f:facet>
-			 -->
+
 	      </p:dataTable>
       </p:panel>
    </ui:define>
