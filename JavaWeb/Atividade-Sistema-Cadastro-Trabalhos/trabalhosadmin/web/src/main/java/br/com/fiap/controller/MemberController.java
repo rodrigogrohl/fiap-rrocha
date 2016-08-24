@@ -17,6 +17,7 @@
 package br.com.fiap.controller;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Model;
 import javax.enterprise.inject.Produces;
 import javax.faces.application.FacesMessage;
@@ -34,7 +35,7 @@ import br.com.fiap.service.MemberRegistration;
 @Model
 public class MemberController {
 
-    @Inject
+    //@Inject
     private FacesContext facesContext;
 
     @Inject
@@ -63,6 +64,7 @@ public class MemberController {
 
     @PostConstruct
     public void initNewMember() {
+    	facesContext = FacesContext.getCurrentInstance();
         newMember = new Member();
     }
 
