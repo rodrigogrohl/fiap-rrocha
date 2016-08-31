@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+<f:loadBundle basename="resources.application" var="msg"/>
+
+<h:head>
+    <title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</h:head>
+
+<body>
+<h3><h:outputText value="#{msg.welcomeHeading}" /></h3>
+	<h:form id="formComentario">
+		<h:panelGrid columns="2">
+			<p>Produto:</p>
+			<h:inputText id="prod" value="#{comentarioBean.comentario.produto}"></h:inputText>
+			
+			<p>Titulo:</p>
+			<h:inputText id="titulo" value="#{comentarioBean.comentario.titulo}"></h:inputText>
+			
+			<p>Avaliação (0 - 5):</p>
+			<p:rating value="#{comentarioBean.comentario.avaliacao}" stars="5"></p:rating>
+		
+		</h:panelGrid>
+		<h:commandButton id="add" actionListener="#{comentarioBean.adicionar}" value="Adicionar"/>
+	</h:form>
+	<hr />
+	<p:dataTable value="#{comentarioBean.lista}" var="c">
+	    <p:column headerText="Id">
+	        <h:outputText value="#{c.id}" />
+	    </p:column>
+	 
+	    <p:column headerText="Produto">
+	        <h:outputText value="#{c.produto}" />
+	    </p:column>
+	    
+	    <p:column headerText="Titulo">
+	        <h:outputText value="#{c.titulo}" />
+	    </p:column>
+	 
+	    <p:column headerText="Avaliação">
+	        <h:outputText value="#{c.avaliacao}" />
+	    </p:column>
+	 
+	    <p:column headerText="Data">
+	        <h:outputText value="#{c.data}" />
+	    </p:column>
+	</p:dataTable>
+</body>
+</html>
