@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import br.com.fiap.ecomm.controller.ComentarioService;
+import br.com.fiap.ecomm.controller.ComentarioServiceRemote;
 import br.com.fiap.ecomm.entity.Comentario;
 
 @RequestScoped
@@ -18,7 +19,7 @@ public class ComentarioBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
-	private ComentarioService service;
+	private ComentarioServiceRemote service;
 
 	private Comentario comentario;
 
