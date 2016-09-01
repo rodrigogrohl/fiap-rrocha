@@ -32,6 +32,7 @@ public class ComentarioBean implements Serializable {
 	public String adicionar() {
 		System.out.println("Adding: " + comentario);
 		service.adicionar(comentario);
+		comentario = new Comentario();
 		lista = null;
 		return "index.jsf";
 	}

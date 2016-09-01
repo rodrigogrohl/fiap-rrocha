@@ -31,7 +31,7 @@
 	</h:form>
 	<hr />
 	<p:dataTable value="#{comentarioBean.lista}" var="c">
-	    <p:column headerText="Id">
+	    <p:column headerText="Id" width="30">
 	        <h:outputText value="#{c.id}" />
 	    </p:column>
 	 
@@ -43,7 +43,7 @@
 	        <h:outputText value="#{c.titulo}" />
 	    </p:column>
 	 
-	    <p:column headerText="Avaliação">
+	    <p:column headerText="Avaliação" width="90">
 	        <p:rating value="#{c.avaliacao}" stars="5" readonly="true"></p:rating>
 	    </p:column>
 	 
