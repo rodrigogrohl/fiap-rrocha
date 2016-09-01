@@ -3,16 +3,15 @@ package br.com.fiap.ecomm.mbean;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.enterprise.context.ConversationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import br.com.fiap.ecomm.controller.ComentarioService;
 import br.com.fiap.ecomm.entity.Comentario;
 
-@ConversationScoped
+@RequestScoped
 @Named(value = "comentarioBean")
 public class ComentarioBean implements Serializable {
 
@@ -33,6 +32,7 @@ public class ComentarioBean implements Serializable {
 	public String adicionar() {
 		System.out.println("Adding: " + comentario);
 		service.adicionar(comentario);
+		lista = null;
 		return "index.jsf";
 	}
 
