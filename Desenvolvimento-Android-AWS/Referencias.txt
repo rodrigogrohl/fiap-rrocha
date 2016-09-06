@@ -1,0 +1,11 @@
+= Arquitetura =
+RxJava
+MVP
+
+= CDI = 
+Dagger2
+
+= Testes = 
+Robotiva
+Espresso
+Calabash
