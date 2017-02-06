@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8" />
+<link href="../css/estilos.css" rel="stylesheet" />
+<link href="../css/forms.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="container">
+		<h1>Listagem de Candidatos</h1>
+		<form>
+			<div class="borda">
+				<div class="linha">
+					<label class="coluna col-5" for="btnListar"> Clique aqui para ver os candidatos: </label>
+					<div class="col-7">
+						<input id="btnListar" type="button" value="Listar" />
+					</div>
+				</div>
+				<div class="linha">
+					<ul id="listaCandidatos"></ul>
+				</div>
+				<a href="index.html">Voltar para a página inicial</a>
+			</div>
+		</form>
+	</div>
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/database.js"></script>
+</body>
+</html>
